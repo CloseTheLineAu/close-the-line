@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Close the Line — public bet record</title>
+  <meta name="description" content="Public units-only bet record for Close the Line (@CloseTheLineAu). Every bet logged before kick-off. No deleted losses.">
+  <meta name="theme-color" content="#07090d">
+  <meta property="og:title" content="Close the Line — public bet record">
+  <meta property="og:description" content="Units only, bookie named, no deleted losses. Record 26–32, +3.51u.">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%2307090d' width='32' height='32' rx='6'/%3E%3Cpolyline fill='none' stroke='%23b8ff3d' stroke-width='2.5' points='5,22 12,16 18,18 27,8'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #07090d;
+      --card: #12161d;
+      --card-2: #181d26;
+      --line: #2a3340;
+      --text: #eef2f7;
+      --muted: #8b95a5;
+      --lime: #b8ff3d;
+      --green: #3ee08f;
+      --red: #ff5c6a;
+      --amber: #f5c84c;
+      --safe: env(safe-area-inset-bottom, 0px);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+    body {
+      font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      width: min(100%, 42rem);
+      margin: 0 auto;
+      padding: 1.25rem 1rem calc(2.5rem + var(--safe));
+    }
+    header { margin-bottom: 1.25rem; }
+    .brand {
+      font-family: Oswald, Impact, sans-serif;
+      font-weight: 700;
+      font-size: 1.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .brand::before {
+      content: "";
+      width: 0.7rem;
+      height: 0.7rem;
+      background: var(--lime);
+      clip-path: polygon(0 80%, 40% 45%, 65% 58%, 100% 10%, 100% 28%, 68% 72%, 42% 58%, 0 100%);
+    }
+    .sub, .updated, .how, .soft-note, footer, .filter-bar label, .count, .tile span, .when, .event, .meta, .chart-cap {
+      color: var(--muted);
+    }
+    .sub { margin: 0.2rem 0 0; font-size: 0.95rem; }
+    .updated { margin: 0.15rem 0 0; font-size: 0.8rem; }
+    .metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+      margin: 1.1rem 0 1rem;
+    }
+    .tile {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      padding: 0.85rem 0.8rem 0.75rem;
+      min-height: 5.4rem;
+    }
+    .tile b {
+      display: block;
+      font-family: Oswald, Impact, sans-serif;
+      font-size: clamp(1.7rem, 8vw, 2.15rem);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      margin: 0.15rem 0 0.25rem;
+    }
+    .tile span, .tile small { display: block; }
+    .tile span { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    .tile small { font-size: 0.75rem; color: var(--muted); }
+    .win, .win-text { color: var(--green); }
+    .loss, .loss-text { color: var(--red); }
+    .pending { color: var(--amber); }
+    .neutral { color: var(--text); }
+    .chart-card, .how, .section, .filters {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+    }
+    .chart-card { padding: 0.85rem 0.7rem 0.55rem; margin-bottom: 0.75rem; }
+    .chart-card h2, .section h2 {
+      margin: 0;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .chart-cap { margin: 0.15rem 0 0.35rem; font-size: 0.8rem; }
+    .chart-svg { width: 100%; height: auto; display: block; }
+    .chart-svg .zero { stroke: #3a4554; stroke-dasharray: 3 3; stroke-width: 1; }
+    .chart-svg .line { fill: none; stroke: #b8ff3d; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+    .chart-svg .dot { fill: #b8ff3d; }
+    .chart-svg .chart-end { fill: #b8ff3d; font: 600 11px "DM Sans", sans-serif; }
+    .how {
+      padding: 0.85rem 0.95rem;
+      margin: 0 0 1.15rem;
+      font-size: 0.92rem;
+    }
+    .how strong { color: var(--text); font-weight: 600; }
+    .section { padding: 0.9rem 0.75rem 0.65rem; margin-bottom: 0.85rem; }
+    .section h2 { margin-bottom: 0.55rem; }
+    .head-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.55rem;
+    }
+    .head-row h2 { margin: 0; }
+    .count { font-size: 0.8rem; }
+    .filters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      padding: 0.65rem;
+      margin: 0 0 0.7rem;
+    }
+    .filters label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    select {
+      appearance: none;
+      background: var(--card-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238b95a5' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 0.7rem center;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 0.65rem;
+      padding: 0.65rem 1.8rem 0.65rem 0.7rem;
+      font: 600 0.95rem "DM Sans", sans-serif;
+      width: 100%;
+    }
+    .form-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0 0 0.75rem; }
+    .form {
+      width: 1.65rem; height: 1.65rem;
+      border-radius: 999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 700;
+      background: var(--card-2);
+      border: 1px solid var(--line);
+    }
+    .form.win { background: #123526; border-color: #1f6b4a; color: var(--green); }
+    .form.loss { background: #3a151a; border-color: #7a2a33; color: var(--red); }
+    .bet {
+      background: var(--card-2);
+      border: 1px solid var(--line);
+      border-radius: 0.8rem;
+      padding: 0.8rem 0.8rem 0.7rem;
+      margin: 0 0 0.55rem;
+    }
+    .bet-top {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .chip {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 0.18rem 0.5rem;
+      border: 1px solid currentColor;
+      line-height: 1.2;
+    }
+    .chip.win { background: #123526; color: var(--green); }
+    .chip.loss { background: #3a151a; color: var(--red); }
+    .chip.pending { background: #3a2e10; color: var(--amber); }
+    .chip.neutral { background: #222833; color: var(--text); }
+    .when { font-size: 0.75rem; margin-left: 0; flex: 1; }
+    .pl { margin-left: auto; font-weight: 700; font-size: 0.95rem; }
+    .bet h3 { margin: 0 0 0.2rem; font-size: 1.05rem; line-height: 1.3; font-weight: 700; }
+    .event { margin: 0 0 0.5rem; font-size: 0.86rem; }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 0.7rem;
+      margin: 0;
+      font-size: 0.8rem;
+    }
+    .meta em { font-style: normal; color: #6d7786; font-weight: 600; padding-right: 0.2rem; }
+    .empty, .soft-note { font-size: 0.86rem; padding: 0 0.15rem; }
+    .hidden { display: none !important; }
+    footer {
+      margin-top: 1.4rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.84rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+    footer a { color: var(--lime); }
+    @media (min-width: 640px) {
+      .metrics { grid-template-columns: repeat(4, 1fr); }
+      .wrap { padding-top: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1 class="brand">Close the Line</h1>
+      <p class="sub">Public bet record · @CloseTheLineAu</p>
+      <p class="updated">Updated Sun 22 Nov 2026, 2:22 PM AEDT. All times AEDT (UTC+11).</p>
+    </header>
+
+    <section class="metrics" aria-label="Record summary">
+      <div class="tile">
+        <span>Units P/L</span>
+        <b class="win">+3.51u</b>
+        <small>80u staked<br>65.5u settled</small>
+      </div>
+      <div class="tile">
+        <span>Record</span>
+        <b>26–32</b>
+        <small>15 pending · 73 bets</small>
+      </div>
+      <div class="tile">
+        <span>ROI</span>
+        <b class="win">+5.4%</b>
+        <small>On settled units</small>
+      </div>
+      <div class="tile">
+        <span>Avg CLV</span>
+        <b class="win">+3.5%</b>
+        <small>20 of 29 beat the close</small>
+      </div>
+    </section>
+
+    <section class="chart-card">
+      <h2>Units over time</h2>
+      <p class="chart-cap">Running P/L in kick-off order. Pending bets are left off until they settle.</p>
+      <svg class="chart-svg" viewBox="0 0 320 118" role="img" aria-label="Cumulative units profit over time, now +3.51u">
+  <defs>
+    <linearGradient id="fill" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#b8ff3d" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#b8ff3d" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+  <line x1="8" x2="276" y1="88.9" y2="88.9" class="zero"/>
+  <polygon points="8.0,88.9 8.0,88.9 12.6,51.5 17.2,60.9 21.9,39.9 26.5,43.0 31.1,52.3 35.7,61.7 40.3,67.9 45.0,63.4 49.6,69.6 54.2,61.2 58.8,56.2 63.4,65.6 68.1,71.8 72.7,63.4 77.3,66.5 81.9,61.3 86.6,70.7 91.2,80.0 95.8,77.5 100.4,70.4 105.0,61.9 109.7,71.3 114.3,43.3 118.9,52.6 123.5,47.5 128.1,43.6 132.8,42.0 137.4,45.1 142.0,40.0 146.6,46.3 151.2,37.4 155.9,29.0 160.5,35.2 165.1,27.1 169.7,30.2 174.3,39.6 179.0,34.0 183.6,40.2 188.2,46.4 192.8,55.7 197.4,65.1 202.1,46.4 206.7,38.6 211.3,34.7 215.9,29.7 220.6,32.8 225.2,42.2 229.8,33.6 234.4,43.0 239.0,49.2 243.7,55.4 248.3,47.6 252.9,36.0 257.5,42.2 262.1,48.4 266.8,54.6 271.4,60.8 276.0,67.1 276.0,88.9" fill="url(#fill)"/>
+  <polyline points="8.0,88.9 12.6,51.5 17.2,60.9 21.9,39.9 26.5,43.0 31.1,52.3 35.7,61.7 40.3,67.9 45.0,63.4 49.6,69.6 54.2,61.2 58.8,56.2 63.4,65.6 68.1,71.8 72.7,63.4 77.3,66.5 81.9,61.3 86.6,70.7 91.2,80.0 95.8,77.5 100.4,70.4 105.0,61.9 109.7,71.3 114.3,43.3 118.9,52.6 123.5,47.5 128.1,43.6 132.8,42.0 137.4,45.1 142.0,40.0 146.6,46.3 151.2,37.4 155.9,29.0 160.5,35.2 165.1,27.1 169.7,30.2 174.3,39.6 179.0,34.0 183.6,40.2 188.2,46.4 192.8,55.7 197.4,65.1 202.1,46.4 206.7,38.6 211.3,34.7 215.9,29.7 220.6,32.8 225.2,42.2 229.8,33.6 234.4,43.0 239.0,49.2 243.7,55.4 248.3,47.6 252.9,36.0 257.5,42.2 262.1,48.4 266.8,54.6 271.4,60.8 276.0,67.1" class="line"/>
+  <circle cx="276.0" cy="67.1" r="3.2" class="dot"/>
+  <text x="282.0" y="59.1" class="chart-end">+3.51u</text>
+</svg>
+    </section>
+
+    <p class="how"><strong>How this works.</strong> Figures are in units, never dollars — 1u is one stake. ROI is profit divided by units staked on settled bets. CLV compares the odds we took with the closing price; a plus number means we beat the close. Value bets can still lose.</p>
+
+    <section class="section" id="pending">
+      <div class="head-row">
+        <h2>Pending</h2>
+        <span class="count" data-count="pending">15</span>
+      </div>
+      <div data-list="pending">
+        <article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Sun 22 Nov, 1:00 pm AEDT</span>
+    
+  </div>
+  <h3>TCU over 20.5 team total</h3>
+  <p class="event">TCU Horned Frogs vs Utah Utes</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 2.30</span>
+    <span><em>Stake</em> 1.5u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="NBA" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Sun 22 Nov, 2:00 pm AEDT</span>
+    
+  </div>
+  <h3>1st quarter under 56.5</h3>
+  <p class="event">Boston Celtics vs Sacramento Kings</p>
+  <p class="meta">
+    <span>NBA</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 1.95</span>
+    <span><em>Stake</em> 1u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="NBL" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Sun 22 Nov, 3:00 pm AEDT</span>
+    
+  </div>
+  <h3>1st half total under 101.5</h3>
+  <p class="event">Cairns Taipans vs SE Melbourne Phoenix</p>
+  <p class="meta">
+    <span>NBL</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 1.89</span>
+    <span><em>Stake</em> 1u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="NBL" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Sun 22 Nov, 5:00 pm AEDT</span>
+    
+  </div>
+  <h3>Under 192.5 total points</h3>
+  <p class="event">Sydney Kings vs Brisbane Bullets</p>
+  <p class="meta">
+    <span>NBL</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 1.90</span>
+    <span><em>Stake</em> 1u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Sun 22 Nov, 10:30 pm AEDT</span>
+    
+  </div>
+  <h3>Juventus over 1.5 team total cards</h3>
+  <p class="event">Juventus vs Venezia</p>
+  <p class="meta">
+    <span>Serie A</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 3.48</span>
+    <span><em>Stake</em> 0.5u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Mon 23 Nov, 1:00 am AEDT</span>
+    
+  </div>
+  <h3>Angers 1st half team total under 0.5</h3>
+  <p class="event">Angers vs Paris FC</p>
+  <p class="meta">
+    <span>Ligue 1</span>
+    <span>Betr</span>
+    <span><em>Odds</em> 1.39</span>
+    <span><em>Stake</em> 1u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Mon 23 Nov, 1:00 am AEDT</span>
+    
+  </div>
+  <h3>Udinese over 1.5 team total cards</h3>
+  <p class="event">Bologna vs Udinese</p>
+  <p class="meta">
+    <span>Serie A</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 1.86</span>
+    <span><em>Stake</em> 0.5u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Mon 23 Nov, 3:30 am AEDT</span>
+    
+  </div>
+  <h3>Liverpool over 1.5 team total cards</h3>
+  <p class="event">Liverpool vs Manchester United</p>
+  <p class="meta">
+    <span>Premier League</span>
+    <span>Betr</span>
+    <span><em>Odds</em> 1.67</span>
+    <span><em>Stake</em> 0.5u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="NFL" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Mon 23 Nov, 5:00 am AEDT</span>
+    
+  </div>
+  <h3>Titans to win</h3>
+  <p class="event">Dallas Cowboys vs Tennessee Titans</p>
+  <p class="meta">
+    <span>NFL</span>
+    <span>Sportsbet</span>
+    <span><em>Odds</em> 4.45</span>
+    <span><em>Stake</em> 1u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="NFL" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Mon 23 Nov, 5:00 am AEDT</span>
+    
+  </div>
+  <h3>Tampa team total TDs under 2.5</h3>
+  <p class="event">Tampa Bay Buccaneers @ Detroit Lions</p>
+  <p class="meta">
+    <span>NFL</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 1.87</span>
+    <span><em>Stake</em> 1.5u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="NFL" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Mon 23 Nov, 5:01 am AEDT</span>
+    
+  </div>
+  <h3>Arizona Cardinals +15.5</h3>
+  <p class="event">Arizona Cardinals @ Kansas City Chiefs</p>
+  <p class="meta">
+    <span>NFL</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 2.00</span>
+    <span><em>Stake</em> 1u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Mon 23 Nov, 6:45 am AEDT</span>
+    
+  </div>
+  <h3>Le Mans 1st half team total under 0.5</h3>
+  <p class="event">Marseille vs Le Mans</p>
+  <p class="meta">
+    <span>Cup</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 1.53</span>
+    <span><em>Stake</em> 1u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="NFL" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Mon 23 Nov, 8:25 am AEDT</span>
+    
+  </div>
+  <h3>NY Giants +8.5</h3>
+  <p class="event">Jacksonville Jaguars @ New York Giants</p>
+  <p class="meta">
+    <span>NFL</span>
+    <span>Betr</span>
+    <span><em>Odds</em> 1.67</span>
+    <span><em>Stake</em> 1u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="Tennis" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Mon 23 Nov, 10:30 am AEDT</span>
+    
+  </div>
+  <h3>Omar Jasika to win</h3>
+  <p class="event">Gorzny vs Omar Jasika (ATP Challenger Playford)</p>
+  <p class="meta">
+    <span>Challenger</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 2.15</span>
+    <span><em>Stake</em> 1u</span>
+    
+    
+  </p>
+</article>
+<article class="bet" data-sport="NFL" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip pending">Pending</span>
+    <span class="when">Mon 23 Nov, 12:20 pm AEDT</span>
+    
+  </div>
+  <h3>San Francisco 49ers -7.5</h3>
+  <p class="event">Minnesota Vikings vs San Francisco 49ers</p>
+  <p class="meta">
+    <span>NFL</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 3.01</span>
+    <span><em>Stake</em> 1u</span>
+    
+    
+  </p>
+</article>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="head-row">
+        <h2>Results</h2>
+        <span class="count" data-count="results">58</span>
+      </div>
+      <div class="filters">
+        <label>Sport
+          <select id="sport-filter" aria-label="Filter by sport"><option value="all" selected>All sports</option><option value="NFL">NFL</option><option value="NCAAF">NCAAF</option><option value="NBA">NBA</option><option value="NBL">NBL</option><option value="Soccer">Soccer</option><option value="Tennis">Tennis</option><option value="Other">Other</option></select>
+        </label>
+        <label>Month
+          <select id="month-filter" aria-label="Filter by month"><option value="all" selected>All months</option><option value="2026-11">Nov 2026</option></select>
+        </label>
+      </div>
+      <div class="form-row" aria-label="Last 10 settled results"><span class="form loss" title="2nd quarter over 57.5 Lost">L</span><span class="form loss" title="1st quarter under 60.5 Lost">L</span><span class="form loss" title="2nd quarter over 54.5 Lost">L</span><span class="form loss" title="Missouri 1Q team total under 6.5 Lost">L</span><span class="form loss" title="California 1H team total under 13.5 Lost">L</span><span class="form win" title="Arizona 1Q team total under 6.5 Won">W</span><span class="form win" title="Marshall 1Q team total under 6.5 Won">W</span><span class="form loss" title="Troy to win Lost">L</span><span class="form loss" title="Michigan team total under 16.5 Lost">L</span><span class="form loss" title="Texas Tech 1st quarter team total under 6.5 Lost">L</span></div>
+      <div data-list="results">
+        <article class="bet" data-sport="NBA" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 12:00 pm AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>2nd quarter over 57.5</h3>
+  <p class="event">New Orleans Pelicans vs San Antonio Spurs — Q2 NOP 16, SAS 29 (45)</p>
+  <p class="meta">
+    <span>NBA</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 1.85</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 1.882</span>
+    <span class="loss-text"><em>CLV</em> −1.7%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NBA" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 12:00 pm AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>1st quarter under 60.5</h3>
+  <p class="event">Memphis Grizzlies vs Minnesota Timberwolves — Q1 MEM 34, MIN 28 (62)</p>
+  <p class="meta">
+    <span>NBA</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 1.84</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 1.846</span>
+    <span class="loss-text"><em>CLV</em> −0.3%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NBA" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 11:30 am AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>2nd quarter over 54.5</h3>
+  <p class="event">Portland Trail Blazers vs New York Knicks — Q2 POR 20, NYK 26 (46); Knicks 97–96 Blazers</p>
+  <p class="meta">
+    <span>NBA</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 1.86</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 1.959</span>
+    <span class="loss-text"><em>CLV</em> −5.0%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 11:30 am AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>Missouri 1Q team total under 6.5</h3>
+  <p class="event">Kentucky vs Missouri — Missouri 7 in 1Q</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 2.10</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 2.016</span>
+    <span class="win-text"><em>CLV</em> +4.2%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 11:30 am AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>California 1H team total under 13.5</h3>
+  <p class="event">Stanford vs California — 1H Stanford 17–14, California 14 points (0 Q1, 14 Q2)</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 2.00</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 1.908</span>
+    <span class="win-text"><em>CLV</em> +4.8%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 11:00 am AEDT</span>
+    <span class="pl win">+1.88u</span>
+  </div>
+  <h3>Arizona 1Q team total under 6.5</h3>
+  <p class="event">Arizona vs Kansas State — Arizona 0 in 1Q</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 2.25</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> 2.25</span>
+    <span class=""><em>CLV</em> 0.0%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 8:00 am AEDT</span>
+    <span class="pl win">+1.25u</span>
+  </div>
+  <h3>Marshall 1Q team total under 6.5</h3>
+  <p class="event">Georgia State vs Marshall — Marshall 0 in 1Q</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 2.25</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 2.218</span>
+    <span class="win-text"><em>CLV</em> +1.4%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 8:00 am AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>Troy to win</h3>
+  <p class="event">Troy Trojans vs Georgia Southern — Georgia Southern 45–7 Troy</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Unibet</span>
+    <span><em>Odds</em> 4.00</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 3.75</span>
+    <span class="win-text"><em>CLV</em> +6.7%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 7:30 am AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>Michigan team total under 16.5</h3>
+  <p class="event">UCLA vs Michigan — Michigan 18–16 UCLA (3OT), Michigan 18 points</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 1.93</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 7:30 am AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Texas Tech 1st quarter team total under 6.5</h3>
+  <p class="event">Baylor vs Texas Tech — Texas Tech 7 already in 1Q</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Unibet</span>
+    <span><em>Odds</em> 2.60</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 7:30 am AEDT</span>
+    <span class="pl win">+1.38u</span>
+  </div>
+  <h3>Washington to win</h3>
+  <p class="event">Washington Huskies vs Indiana Hoosiers — Washington 27–24 Indiana (OT)</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Unibet</span>
+    <span><em>Odds</em> 3.75</span>
+    <span><em>Stake</em> 0.5u</span>
+    <span><em>Close</em> 3.944</span>
+    <span class="loss-text"><em>CLV</em> −4.9%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 7:00 am AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Delaware 1st quarter team total under 6.5</h3>
+  <p class="event">Delaware vs New Mexico State — Delaware 7 in 1Q</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 2.20</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 6:45 am AEDT</span>
+    <span class="pl loss">−0.5u</span>
+  </div>
+  <h3>Over 3.5 total cards</h3>
+  <p class="event">Torino vs Napoli — Napoli 1–0 Torino, 3 yellows (no reds)</p>
+  <p class="meta">
+    <span>Serie A</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 3.28</span>
+    <span><em>Stake</em> 0.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 6:45 am AEDT</span>
+    <span class="pl win">+0.8u</span>
+  </div>
+  <h3>Under 2.5 goals</h3>
+  <p class="event">Lille vs Lyon — Lyon 1–0 Lille</p>
+  <p class="meta">
+    <span>Ligue 1</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 1.80</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 1.76</span>
+    <span class="win-text"><em>CLV</em> +2.3%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 6:45 am AEDT</span>
+    <span class="pl win">+0.63u</span>
+  </div>
+  <h3>Monaco team total under 2.5 goals</h3>
+  <p class="event">Monaco vs Auxerre — Monaco 1–1 Auxerre, Monaco 1 goal</p>
+  <p class="meta">
+    <span>Ligue 1</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 1.63</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 6:45 am AEDT</span>
+    <span class="pl win">+1.25u</span>
+  </div>
+  <h3>Under 2.5 goals</h3>
+  <p class="event">Strasbourg vs Brest — Brest 1–0 Strasbourg</p>
+  <p class="meta">
+    <span>Ligue 1</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 2.25</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 2.009</span>
+    <span class="win-text"><em>CLV</em> +12.0%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Tennis" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 6:30 am AEDT</span>
+    <span class="pl win">+3u</span>
+  </div>
+  <h3>1st set over 12.5 games</h3>
+  <p class="event">Medvedev vs Zverev — 1st set Zverev 7–6(0)</p>
+  <p class="meta">
+    <span>ATP</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 3.00</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 6:30 am AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>UL Monroe to win</h3>
+  <p class="event">Appalachian State vs UL Monroe — Appalachian State 17–16 UL Monroe (OT)</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Unibet</span>
+    <span><em>Odds</em> 6.10</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> 5.855</span>
+    <span class="win-text"><em>CLV</em> +4.2%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 6:00 am AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Charlotte 1st half team total under 6.5</h3>
+  <p class="event">Charlotte 49ers vs Tulsa Golden Hurricane — 1H 7–7, Charlotte 7 points</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 2.35</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> 2.143</span>
+    <span class="win-text"><em>CLV</em> +9.7%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Other" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 5:00 am AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>Cleveland State +4</h3>
+  <p class="event">Kent State vs Cleveland State — Kent State 69–62 Cleveland State</p>
+  <p class="meta">
+    <span>NCAAB</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 1.90</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 5:00 am AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>Houston 1st half team total under 20.5</h3>
+  <p class="event">Houston vs West Virginia — Houston 21 1H points (14 Q1, 7 Q2)</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 2.10</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NBA" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 5:00 am AEDT</span>
+    <span class="pl win">+0.9u</span>
+  </div>
+  <h3>2nd quarter over 54.5</h3>
+  <p class="event">Milwaukee Bucks vs Philadelphia 76ers — Q2 MIL 29, PHI 31 (60)</p>
+  <p class="meta">
+    <span>NBA</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 1.90</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 5:00 am AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Western Kentucky to win</h3>
+  <p class="event">Liberty Flames vs Western Kentucky — Liberty 45–14 WKU</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Unibet</span>
+    <span><em>Odds</em> 8.50</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> 7.973</span>
+    <span class="win-text"><em>CLV</em> +6.6%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 4:30 am AEDT</span>
+    <span class="pl loss">−0.5u</span>
+  </div>
+  <h3>Betis under 2.5 team total cards</h3>
+  <p class="event">Betis vs Sevilla — Betis 3 yellows (Firpo 11&#x27;, Cucho 11&#x27;, Bellerín 79&#x27;)</p>
+  <p class="meta">
+    <span>La Liga</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 2.70</span>
+    <span><em>Stake</em> 0.5u</span>
+    <span><em>Close</em> 2.54*</span>
+    <span class="win-text"><em>CLV</em> +6.3%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 4:30 am AEDT</span>
+    <span class="pl win">+1.3u</span>
+  </div>
+  <h3>Over 5.5 total cards</h3>
+  <p class="event">Arsenal vs Newcastle — Newcastle 2–2 Arsenal, 6 yellows (no reds)</p>
+  <p class="meta">
+    <span>Premier League</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 3.60</span>
+    <span><em>Stake</em> 0.5u</span>
+    <span><em>Close</em> 3.13*</span>
+    <span class="win-text"><em>CLV</em> +15.0%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 4:30 am AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>Stuttgart 1st half to win (3-way)</h3>
+  <p class="event">Stuttgart vs Schalke — HT 0–0</p>
+  <p class="meta">
+    <span>Bundesliga</span>
+    <span>Betr</span>
+    <span><em>Odds</em> 2.50</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 2.391</span>
+    <span class="win-text"><em>CLV</em> +4.6%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 4:00 am AEDT</span>
+    <span class="pl win">+1.35u</span>
+  </div>
+  <h3>Minnesota +3.5</h3>
+  <p class="event">Northwestern vs Minnesota — Minnesota 20–17 Northwestern</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Dabble</span>
+    <span><em>Odds</em> 1.90</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 4:00 am AEDT</span>
+    <span class="pl win">+1.43u</span>
+  </div>
+  <h3>Boston College +3.5</h3>
+  <p class="event">Syracuse vs Boston College — BC 27–15 Syracuse</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Dabble</span>
+    <span><em>Odds</em> 1.95</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 2:00 am AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>Coventry team goals under 1.5</h3>
+  <p class="event">Crystal Palace vs Coventry — Coventry 3–2 Palace (inc. OG)</p>
+  <p class="meta">
+    <span>Cup</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 1.74</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 2:00 am AEDT</span>
+    <span class="pl win">+0.82u</span>
+  </div>
+  <h3>Bournemouth under 1.5 team total cards</h3>
+  <p class="event">Nottingham Forest vs Bournemouth — Bournemouth 2–0 Forest, Bournemouth 1 yellow</p>
+  <p class="meta">
+    <span>Premier League</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 2.63</span>
+    <span><em>Stake</em> 0.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 2:00 am AEDT</span>
+    <span class="pl loss">−0.5u</span>
+  </div>
+  <h3>Sunderland over 2.5 team total cards</h3>
+  <p class="event">Sunderland vs Aston Villa — 0–0, Sunderland 2 yellows</p>
+  <p class="meta">
+    <span>Cup</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 2.48</span>
+    <span><em>Stake</em> 0.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 2:00 am AEDT</span>
+    <span class="pl win">+0.26u</span>
+  </div>
+  <h3>Under 4.5 total cards</h3>
+  <p class="event">Bristol City vs Middlesbrough — Middlesbrough 2–0 Bristol City, 2 yellows (both Boro)</p>
+  <p class="meta">
+    <span>Championship</span>
+    <span>Betr</span>
+    <span><em>Odds</em> 1.51</span>
+    <span><em>Stake</em> 0.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 2:00 am AEDT</span>
+    <span class="pl win">+0.63u</span>
+  </div>
+  <h3>Tottenham 1H total goals over 0.5</h3>
+  <p class="event">Tottenham vs Ipswich — Tottenham 2–0 Ipswich, 1H 1–0 (Williams-Barnett 15&#x27;)</p>
+  <p class="meta">
+    <span>Cup</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 1.63</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Other" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 2:00 am AEDT</span>
+    <span class="pl win">+0.82u</span>
+  </div>
+  <h3>John Mitchell to win</h3>
+  <p class="event">John Mitchell vs Yousaf (UFC) — Mitchell KO (knee) 3:50 R1</p>
+  <p class="meta">
+    <span>UFC</span>
+    <span>Palmerbet</span>
+    <span><em>Odds</em> 1.82</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 1.686</span>
+    <span class="win-text"><em>CLV</em> +8.0%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 2:00 am AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Lincoln City to win</h3>
+  <p class="event">Lincoln vs Wrexham — Wrexham 1–0 Lincoln</p>
+  <p class="meta">
+    <span>EFL</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 2.90</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> 2.863</span>
+    <span class="win-text"><em>CLV</em> +1.3%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 2:00 am AEDT</span>
+    <span class="pl win">+4.5u</span>
+  </div>
+  <h3>Leeds to win</h3>
+  <p class="event">Chelsea vs Leeds — Leeds 4–1 Chelsea</p>
+  <p class="meta">
+    <span>Premier League</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 4.00</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> 4.221</span>
+    <span class="loss-text"><em>CLV</em> −5.2%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sun 22 Nov, 2:00 am AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Under 3.5 total cards</h3>
+  <p class="event">Preston vs West Ham — 1–1, 5 yellows (no reds)</p>
+  <p class="meta">
+    <span>EFL</span>
+    <span>Sportsbet</span>
+    <span><em>Odds</em> 2.00</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 1:30 am AEDT</span>
+    <span class="pl win">+1.37u</span>
+  </div>
+  <h3>Gladbach over 3.5 corners</h3>
+  <p class="event">Mönchengladbach vs Borussia Dortmund — 0–1, Gladbach 7 corners</p>
+  <p class="meta">
+    <span>Bundesliga</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 1.91</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Other" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 1:00 am AEDT</span>
+    <span class="pl win">+1.14u</span>
+  </div>
+  <h3>Kolossos Rhodes -6.5</h3>
+  <p class="event">Kolossos Rhodes vs Promitheas Patras — Rhodes 100–64 Promitheas</p>
+  <p class="meta">
+    <span>Greece BB</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 1.76</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Tennis" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sun 22 Nov, 12:30 am AEDT</span>
+    <span class="pl win">+0.4u</span>
+  </div>
+  <h3>Ben Shelton +4.5 games</h3>
+  <p class="event">Ben Shelton vs Carlos Alcaraz — Alcaraz 3–6, 6–3, 7–6(1); games 16–15 Alcaraz</p>
+  <p class="meta">
+    <span>ATP</span>
+    <span>Betr</span>
+    <span><em>Odds</em> 1.40</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 1.282</span>
+    <span class="win-text"><em>CLV</em> +9.2%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sat 21 Nov, 11:30 pm AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Man City under 0.5 team total cards</h3>
+  <p class="event">Fulham vs Man City — 1–1, City 1 yellow (Donnarumma 76&#x27;)</p>
+  <p class="meta">
+    <span>Premier League</span>
+    <span>Sportsbet</span>
+    <span><em>Odds</em> 3.36</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NBL" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sat 21 Nov, 7:36 pm AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Melbourne United -5.5</h3>
+  <p class="event">NZ Breakers vs Melbourne United — Melbourne United 94–91 Breakers</p>
+  <p class="meta">
+    <span>NBL</span>
+    <span>Dabble</span>
+    <span><em>Odds</em> 1.90</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NBL" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sat 21 Nov, 5:36 pm AEDT</span>
+    <span class="pl win">+0.83u</span>
+  </div>
+  <h3>JackJumpers -3.5</h3>
+  <p class="event">Illawarra Hawks vs Tasmania JackJumpers — JackJumpers 95–82 Hawks</p>
+  <p class="meta">
+    <span>NBL</span>
+    <span>Dabble</span>
+    <span><em>Odds</em> 1.83</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NBA" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sat 21 Nov, 2:10 pm AEDT</span>
+    <span class="pl loss">−0.5u</span>
+  </div>
+  <h3>Kings to win</h3>
+  <p class="event">LA Lakers vs Sacramento Kings — Lakers 106–104 Kings</p>
+  <p class="meta">
+    <span>NBA</span>
+    <span>Sportsbet</span>
+    <span><em>Odds</em> 7.50</span>
+    <span><em>Stake</em> 0.5u</span>
+    <span><em>Close</em> 7.16</span>
+    <span class="win-text"><em>CLV</em> +4.8%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NBA" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sat 21 Nov, 1:30 pm AEDT</span>
+    <span class="pl win">+1.35u</span>
+  </div>
+  <h3>Under 227.5 total points</h3>
+  <p class="event">Phoenix Suns vs Utah Jazz</p>
+  <p class="meta">
+    <span>NBA</span>
+    <span>Dabble</span>
+    <span><em>Odds</em> 1.90</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> 1.87</span>
+    <span class="win-text"><em>CLV</em> +1.6%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sat 21 Nov, 1:00 pm AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>Wyoming to win</h3>
+  <p class="event">Wyoming Cowboys vs New Mexico Lobos — New Mexico 24–17 Wyoming</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Unibet</span>
+    <span><em>Odds</em> 3.65</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 4.21</span>
+    <span class="loss-text"><em>CLV</em> −13.3%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NBA" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sat 21 Nov, 12:10 pm AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Pelicans to win</h3>
+  <p class="event">Oklahoma City Thunder vs New Orleans Pelicans</p>
+  <p class="meta">
+    <span>NBA</span>
+    <span>Sportsbet</span>
+    <span><em>Odds</em> 6.10</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> 5.09</span>
+    <span class="win-text"><em>CLV</em> +19.8%</span>
+  </p>
+</article>
+<article class="bet" data-sport="NBA" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sat 21 Nov, 12:10 pm AEDT</span>
+    <span class="pl win">+0.8u</span>
+  </div>
+  <h3>Wizards +4.5</h3>
+  <p class="event">Chicago Bulls vs Washington Wizards</p>
+  <p class="meta">
+    <span>NBA</span>
+    <span>Dabble</span>
+    <span><em>Odds</em> 1.80</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sat 21 Nov, 12:05 pm AEDT</span>
+    <span class="pl win">+1.35u</span>
+  </div>
+  <h3>Oregon -15.5</h3>
+  <p class="event">Oregon Ducks vs Michigan State Spartans — Oregon 45–7</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Dabble</span>
+    <span><em>Odds</em> 1.90</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="NCAAF" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sat 21 Nov, 12:00 pm AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>UTEP 1st half team total over 6.5</h3>
+  <p class="event">Air Force Falcons vs UTEP Miners</p>
+  <p class="meta">
+    <span>NCAAF</span>
+    <span>Unibet</span>
+    <span><em>Odds</em> 2.00</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Soccer" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Sat 21 Nov, 6:30 am AEDT</span>
+    <span class="pl win">+0.72u</span>
+  </div>
+  <h3>Under 11.5 total corners</h3>
+  <p class="event">Cologne vs Bayern Munich — 1–1, 5 corners (Bayern 5, Köln 0)</p>
+  <p class="meta">
+    <span>Bundesliga</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 1.72</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 1.76</span>
+    <span class="loss-text"><em>CLV</em> −2.3%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Tennis" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sat 21 Nov, 5:30 am AEDT</span>
+    <span class="pl loss">−1u</span>
+  </div>
+  <h3>Over 2.5 total sets</h3>
+  <p class="event">Stefan Kozlov vs Clement Chidekh — Chidekh 6–2, 7–6(5)</p>
+  <p class="meta">
+    <span>ATP</span>
+    <span>PointsBet</span>
+    <span><em>Odds</em> 2.70</span>
+    <span><em>Stake</em> 1u</span>
+    <span><em>Close</em> 2.60</span>
+    <span class="win-text"><em>CLV</em> +3.8%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Other" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Sat 21 Nov, 4:30 am AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>ASVEL to win</h3>
+  <p class="event">ASVEL Lyon-Villeurbanne vs Anadolu Efes — Efes 107–81 ASVEL</p>
+  <p class="meta">
+    <span>EuroLeague</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 4.00</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> 3.50</span>
+    <span class="win-text"><em>CLV</em> +14.3%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Tennis" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Fri 20 Nov, 11:00 pm AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Cobolli to win</h3>
+  <p class="event">Flavio Cobolli vs Carlos Alcaraz — Alcaraz 6–4, 6–1</p>
+  <p class="meta">
+    <span>ATP</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 6.50</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Tennis" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Fri 20 Nov, 6:30 am AEDT</span>
+    <span class="pl loss">−0.5u</span>
+  </div>
+  <h3>Fils to win</h3>
+  <p class="event">Arthur Fils vs Alexander Zverev — Zverev 6–4, 7–6(6)</p>
+  <p class="meta">
+    <span>ATP</span>
+    <span>Dabble</span>
+    <span><em>Odds</em> 3.60</span>
+    <span><em>Stake</em> 0.5u</span>
+    <span><em>Close</em> 3.83</span>
+    <span class="loss-text"><em>CLV</em> −6.0%</span>
+  </p>
+</article>
+<article class="bet" data-sport="Tennis" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Thu 19 Nov, 11:00 pm AEDT</span>
+    <span class="pl win">+3.38u</span>
+  </div>
+  <h3>1st set total games over 12.5</h3>
+  <p class="event">Ben Shelton vs Rafael Jodar — 1st set 7–6(8)</p>
+  <p class="meta">
+    <span>ATP</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 3.25</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Other" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip loss">Lost</span>
+    <span class="when">Thu 19 Nov, 4:30 am AEDT</span>
+    <span class="pl loss">−1.5u</span>
+  </div>
+  <h3>Burgos to win</h3>
+  <p class="event">San Pablo Burgos vs Cedevita Olimpija — Burgos 62–76</p>
+  <p class="meta">
+    <span>Europe BB</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 3.45</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+<article class="bet" data-sport="Other" data-month="2026-11">
+  <div class="bet-top">
+    <span class="chip win">Won</span>
+    <span class="when">Thu 19 Nov, 3:30 am AEDT</span>
+    <span class="pl win">+6u</span>
+  </div>
+  <h3>Zelli to win</h3>
+  <p class="event">Rigas Zelli vs Derthona Basket — Zelli 96–92</p>
+  <p class="meta">
+    <span>Europe BB</span>
+    <span>bet365</span>
+    <span><em>Odds</em> 5.00</span>
+    <span><em>Stake</em> 1.5u</span>
+    <span><em>Close</em> —</span>
+    <span class=""><em>CLV</em> —</span>
+  </p>
+</article>
+      </div>
+      <p class="soft-note">* Soft close: fair market price used when no sharp close was available.</p>
+    </section>
+
+    <footer>
+      <p>18+ Gamble responsibly. 1800 858 858 / <a href="https://www.gamblinghelponline.org.au">gamblinghelponline.org.au</a></p>
+      <p>Every bet logged before kick-off. No deleted losses.</p>
+    </footer>
+  </main>
+  <script>
+    (function () {
+      const sport = document.getElementById("sport-filter");
+      const month = document.getElementById("month-filter");
+      const lists = document.querySelectorAll("[data-list]");
+      function apply() {
+        const s = sport.value;
+        const m = month.value;
+        lists.forEach((list) => {
+          let shown = 0;
+          list.querySelectorAll(".bet").forEach((card) => {
+            const ok = (s === "all" || card.dataset.sport === s) && (m === "all" || card.dataset.month === m);
+            card.classList.toggle("hidden", !ok);
+            if (ok) shown += 1;
+          });
+          const counter = document.querySelector('[data-count="' + list.dataset.list + '"]');
+          if (counter) counter.textContent = shown;
+          const empty = list.querySelector(".empty");
+          if (empty) empty.classList.toggle("hidden", shown > 0 || list.querySelectorAll(".bet").length === 0);
+        });
+      }
+      sport.addEventListener("change", apply);
+      month.addEventListener("change", apply);
+    })();
+  </script>
+</body>
+</html>
